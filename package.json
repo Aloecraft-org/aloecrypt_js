@@ -1,6 +1,6 @@
 {
   "name": "@aloecraft/aloecrypt",
-  "version": "0.1.0",
+  "version": "0.1.14",
   "description": "Post-quantum secure messaging library for JavaScript and TypeScript",
   "type": "module",
   "main": "./dist/index.js",
@@ -22,7 +22,8 @@
     "test": "npm run build && node dist/test.js",
     "serve": "node serve.mjs",
     "prepublishOnly": "npm run build",
-    "docs": "typedoc"
+    "docs": "typedoc",
+    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,css,html}\""
   },
   "keywords": [
     "cryptography",
@@ -37,10 +38,10 @@
   ],
   "author": "Michael Godfrey <michael@aloecraft.org>",
   "license": "Apache-2.0",
-  "homepage": "https://aloecraft.org",
+  "homepage": "https://aloecrypt-js.aloecraft.org",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Aloecraft-org/aloecrypt_js"
+    "url": "git+https://github.com/Aloecraft-org/aloecrypt_js.git"
   },
   "publishConfig": {
     "access": "public"
@@ -52,11 +53,10 @@
   "devDependencies": {
     "@types/node": "^25.4.0",
     "esbuild": "^0.27.3",
+    "prettier": "^3.8.1",
     "ts-node": "^10.9.2",
-    "typedoc": "^0.28.17",
-    "typedoc-plugin-markdown": "^4.10.0",
-    "typescript": "^5.9.3",
     "typedoc": "^0.28.0",
-    "typedoc-plugin-markdown": "^4.0.0"
+    "typedoc-plugin-markdown": "^4.0.0",
+    "typescript": "^5.9.3"
   }
 }
