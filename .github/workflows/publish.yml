@@ -54,5 +54,13 @@ jobs:
       - name: Update npm
         run: npm install -g npm@latest
 
+      - name: Debug permissions
+        run: |
+          echo "ACTIONS_ID_TOKEN_REQUEST_URL: $ACTIONS_ID_TOKEN_REQUEST_URL"
+          echo "ACTIONS_ID_TOKEN_REQUEST_TOKEN exists: $([[ -n "$ACTIONS_ID_TOKEN_REQUEST_TOKEN" ]] && echo yes || echo no)"
+          curl -s -o /dev/null -w "%{http_code}" \
+            -H "Authorization: bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" \
+            "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=npm:registry.npmjs.org" || echo "curl failed"
+
       - name: Publish
         run: npm publish
