@@ -1,6 +1,6 @@
 {
   "name": "@aloecraft/aloecrypt",
-  "version": "0.1.17",
+  "version": "0.1.18",
   "description": "Post-quantum secure messaging library for JavaScript and TypeScript",
   "type": "module",
   "main": "./dist/index.js",
@@ -17,8 +17,8 @@
     "LICENSE"
   ],
   "scripts": {
-    "build": "tsc && cp .bin/aloecrypt_plugin.wasm dist/aloecrypt_plugin.wasm",
-    "bundle": "esbuild dist/index.js --bundle --format=esm --outfile=dist/bundle.js --external:node:*",
+    "build": "tsc && cp .bin/aloecrypt_plugin.wasm dist/aloecrypt_plugin.wasm && esbuild dist/index.js --bundle --format=esm --outfile=dist/bundle.js --external:node:* --external:fs --external:path --external:url",
+    "bundle": "esbuild dist/index.js --bundle --format=esm --outfile=dist/bundle.js --external:node:* --external:fs --external:path --external:url",
     "test": "npm run build && node dist/test.js",
     "serve": "node serve.mjs",
     "prepublishOnly": "npm run build",

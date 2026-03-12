@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
+    <title>Aloecrypt Example</title>
     <script type="module">
-        import { initPlugin, DilithiumSigner, SessionBuilder, performHandshake }
-            from "https://cdn.jsdelivr.net/npm/@aloecraft/aloecrypt/dist/index.js";
+        import { initPlugin, DilithiumSigner }
+            from "https://cdn.jsdelivr.net/npm/@aloecraft/aloecrypt/dist/bundle.js";
 
         const wasm = await fetch("https://cdn.jsdelivr.net/npm/@aloecraft/aloecrypt/dist/aloecrypt_plugin.wasm")
             .then(r => r.arrayBuffer());
@@ -19,9 +17,6 @@
         console.log(root.address);
     </script>
 </head>
-
 <body>
-
 </body>
-
 </html>
